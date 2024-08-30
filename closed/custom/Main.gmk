@@ -124,6 +124,7 @@ endif # HEALTHCENTER_JAR
 ifeq (true,$(BUILD_OPENJCEPLUS))
 
 ifeq ($(call And, $(call isTargetOs, windows) $(call isTargetCpu, x86_64)), true)
+  EXPORT_COMPILER_ENV_VARS := LIB='$(OPENJ9_VS_LIB)' PATH="$(PATH)"
   OPENJCEPLUS_JGSKIT_MAKE := jgskit.win64.mak
 else
   OPENJCEPLUS_JGSKIT_MAKE := jgskit.mak
